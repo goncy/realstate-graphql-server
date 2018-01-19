@@ -1,0 +1,41 @@
+type User {
+  id: ID! @unique
+  email: String! @unique
+  password: String!
+  name: String!
+}
+
+type Registry {
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  name: String!
+  description: String
+  direction: String
+  locations: [String!]!
+  price: Int
+  spaces: Int
+  operation: String!
+  categories: [String!]!
+  expenses: [Expense!]!
+  images: [String!]!
+  amenities: [Amenity!]!
+  featured: Boolean
+  summary: [Summary!]!
+}
+
+type Amenity {
+  description: String
+  icon: String
+  type: String!
+}
+
+type Expense {
+  name: String!
+  price: Int
+}
+
+type Summary {
+  name: String!
+  value: String!
+}

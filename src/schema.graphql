@@ -1,0 +1,33 @@
+# import Registry from "./generated/prisma.graphql"
+
+type Query {
+  me: User
+
+  registryByID(id: ID!): Registry
+  registriesProp(prop: String!): [String!]!
+  registriesByQuery(query: RegistrySearch!): [Registry!]!
+  featuredRegistriesByOperation(operation: String!): [Registry!]!
+}
+
+type Mutation {
+  signup(email: String!, password: String!, name: String!): AuthPayload!
+  login(email: String!, password: String!): AuthPayload!
+}
+
+type AuthPayload {
+  token: String!
+  user: User!
+}
+
+type User {
+  id: ID!
+  email: String!
+  name: String!
+}
+
+input RegistrySearch {
+  operation: String!
+  categories: [String]
+  locations: [String]!
+  spaces: Int
+}

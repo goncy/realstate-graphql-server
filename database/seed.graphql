@@ -1,0 +1,66 @@
+mutation {
+  createRegistry(data:{
+    amenities: {
+        create: [
+            {
+                description: "1 dormitorio",
+                icon: "fa fa-bed",
+                type: "spaces"
+            },
+            {
+                description: "1 baño",
+                icon: "fa fa-bath",
+                type: "spaces"
+            },
+            {
+                description: "Equipada",
+                icon: "fa fa-cutlery",
+                type: "spaces"
+            },
+            {
+                description: "Patio techado",
+                icon: "fa fa-leaf",
+                type: "spaces"
+            }
+        ]
+    },
+    categories: {
+        set: [
+            "ph"
+        ]
+    },
+    description: "PH 2 ambientes",
+    direction: "Guemes 78, Bernal",
+    expenses: {
+        create: []
+    },
+    featured: true,
+    images: {
+        set: [
+            "http://placehold.it/256x256"
+        ]
+    },
+    locations: {
+        set: [
+            "zona sur",
+            "quilmes",
+            "bernal",
+            "bernal este"
+        ]
+    },
+    name: "Guemes 78",
+    operation: "venta",
+    price: 100000,
+    spaces: 3,
+    summary: {
+        create: [
+            {
+                name: "Superficie cubierta",
+                value: "123 M2"
+            }
+        ]
+    }
+}) {
+    id
+  }
+}
